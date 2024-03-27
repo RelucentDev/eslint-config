@@ -13,7 +13,7 @@
     "url": "https://github.com/RelucentDev/governance/issues"
   },
   "author": "Relucent Ltd <hello@relucent.dev>",
-  "license": "LGPL-3.0-or-later",
+  "license": "MIT",
   "private": false,
   "exports": {
     ".": {
