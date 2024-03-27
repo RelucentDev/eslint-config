@@ -12,7 +12,7 @@ Shared ESLint config for Relucent projects.
 
 ## License
 
-MIT &copy; 2023 Relucent Ltd
+MIT &copy; 2024 Relucent Ltd
 
 ### Contact
 
