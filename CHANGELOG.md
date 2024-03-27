@@ -1,5 +1,12 @@
 # @relucent.dev/eslint-config
 
+## 2.0.4
+
+### Patch Changes
+
+- c31c2bf: re-publish under MIT license
+- ede285b: bump dependencies
+
 ## 2.0.3
 
 ### Patch Changes
