@@ -72,7 +72,7 @@
     "eslint-plugin-jsdoc": "^46.9.0"
   },
   "devDependencies": {
-    "@relucent.dev/prettier-config": "*",
+    "@relucent.dev/prettier-config": "^2.1.5",
     "@types/eslint__js": "^8.42.3",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/node": "^20.11.30",
