@@ -5,12 +5,12 @@
   "description": "Relucent's Shared ESLint Config",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/RelucentDev/governance.git",
+    "url": "git+ssh://git@github.com/RelucentDev/eslint-config.git",
     "directory": "packages/eslint-config"
   },
-  "homepage": "https://github.com/RelucentDev/governance#readme",
+  "homepage": "https://github.com/RelucentDev/eslint-config#readme",
   "bugs": {
-    "url": "https://github.com/RelucentDev/governance/issues"
+    "url": "https://github.com/RelucentDev/eslint-config/issues"
   },
   "author": "Relucent Ltd <hello@relucent.dev>",
   "license": "MIT",
@@ -48,14 +48,14 @@
   ],
   "scripts": {
     "build": "npm-run-all tsup",
+    "changeset": "changeset",
     "lint": "npm-run-all typecheck publint prettier",
     "lint:dev": "npm-run-all typecheck publint prettier",
-    "changeset": "changeset",
-    "publint": "publint",
-    "tsup": "tsup --entry src/index.ts --entry src/typescript.ts --format cjs,esm --minify --dts --sourcemap",
-    "release": "changeset publish",
     "prettier": "prettier --check .",
     "prettier:dev": "prettier --write .",
+    "publint": "publint",
+    "release": "changeset publish",
+    "tsup": "tsup --entry src/index.ts --entry src/typescript.ts --format cjs,esm --minify --dts --sourcemap",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
@@ -78,8 +78,8 @@
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
     "@relucent.dev/prettier-config": "^2.1.9",
-    "@types/eslint__js": "^8.42.3",
     "@types/eslint-config-prettier": "^6.11.3",
+    "@types/eslint__js": "^8.42.3",
     "@types/node": "^20.11.30",
     "eslint": "^8.54.0",
     "npm-run-all": "^4.1.5",
