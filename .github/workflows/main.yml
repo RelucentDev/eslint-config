@@ -1,0 +1,52 @@
+# Relucent Prettier Config.
+# (c) 2023 Relucent Ltd
+# https://relucent.dev
+
+name: Check Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    uses: ./.github/workflows/lint.yml
+    secrets: inherit
+
+  check-links:
+    uses: RelucentDev/governance/.github/workflows/check-links.yml@main
+    secrets: inherit
+
+  release:
+    needs:
+      - lint
+      - check-links
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+      - uses: actions/cache@v4
+        id: cache-modules
+        with:
+          path: node_modules
+          key: node_modules-${{hashFiles('package-lock.json')}}
+          restore-keys: node_modules-
+      - run: npm clean-install
+      - run: npm run build
+      - run: npm audit signatures
+      - uses: changesets/action@v1
+        with:
+          publish: npm run release
+          title: "chore(release): version packages"
+          commit: "chore(release): version packages"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,0 +1,89 @@
+{
+  "name": "@relucent.dev/eslint-config",
+  "version": "2.0.3",
+  "type": "module",
+  "description": "Relucent's Shared ESLint Config",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/RelucentDev/governance.git",
+    "directory": "packages/eslint-config"
+  },
+  "homepage": "https://github.com/RelucentDev/governance#readme",
+  "bugs": {
+    "url": "https://github.com/RelucentDev/governance/issues"
+  },
+  "author": "Relucent Ltd <hello@relucent.dev>",
+  "license": "LGPL-3.0-or-later",
+  "private": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./typescript": {
+      "import": {
+        "types": "./dist/typescript.d.ts",
+        "default": "./dist/typescript.js"
+      },
+      "require": {
+        "types": "./dist/typescript.d.cts",
+        "default": "./dist/typescript.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "relucent"
+  ],
+  "scripts": {
+    "build": "npm-run-all tsup",
+    "lint": "npm-run-all typecheck publint",
+    "lint:dev": "npm-run-all typecheck publint",
+    "publint": "publint",
+    "tsup": "tsup --entry src/index.ts --entry src/typescript.ts --format cjs,esm --minify --dts --sourcemap",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@eslint/js": "^8.54.0",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-jest": "^27.6.0",
+    "eslint-plugin-jsdoc": "^46.9.0"
+  },
+  "devDependencies": {
+    "@relucent.dev/prettier-config": "*",
+    "@types/eslint__js": "^8.42.3",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/node": "^20.11.30",
+    "eslint": "^8.54.0",
+    "npm-run-all": "^4.1.5",
+    "publint": "^0.2.7",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
