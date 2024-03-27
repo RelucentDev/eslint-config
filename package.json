@@ -48,8 +48,8 @@
   ],
   "scripts": {
     "build": "npm-run-all tsup",
-    "lint": "npm-run-all typecheck publint",
-    "lint:dev": "npm-run-all typecheck publint",
+    "lint": "npm-run-all typecheck publint prettier",
+    "lint:dev": "npm-run-all typecheck publint prettier",
     "changeset": "changeset",
     "publint": "publint",
     "tsup": "tsup --entry src/index.ts --entry src/typescript.ts --format cjs,esm --minify --dts --sourcemap",
