@@ -1,5 +1,11 @@
 # @relucent.dev/eslint-config
 
+## 2.0.5
+
+### Patch Changes
+
+- bff1702: bump dependencies
+
 ## 2.0.4
 
 ### Patch Changes
