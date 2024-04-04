@@ -1,5 +1,11 @@
 # @relucent.dev/eslint-config
 
+## 2.0.6
+
+### Patch Changes
+
+- c4a3765: bump dependencies
+
 ## 2.0.5
 
 ### Patch Changes
