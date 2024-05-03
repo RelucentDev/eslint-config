@@ -70,10 +70,39 @@ export default function relucentESLint({
     },
     {
       ignores: [
-        "dist/**/*",
-        "coverage/**/*",
-        "node_modules/**/*",
-        "**/__generated/**/*",
+        // Packages & Dependencies
+        "**/node_modules",
+        "**/package-lock.json",
+        "**/yarn.lock",
+        "**/pnpm-lock.yaml",
+        "**/bun.lockb",
+
+        // Outputs
+        "**/dist",
+        "**/output",
+        "**/coverage",
+        "**/temp",
+        "**/.temp",
+        "**/tmp",
+        "**/.tmp",
+        "**/.history",
+        "**/.vitepress/cache",
+        "**/.nuxt",
+        "**/.next",
+        "**/.vercel",
+        "**/.changeset",
+        "**/.idea",
+        "**/.cache",
+        "**/.output",
+        "**/.vite-inspect",
+
+        // General
+        "**/CHANGELOG*.md",
+        "**/*.min.*",
+        "**/LICENSE*",
+        "**/__snapshots__",
+        "**/auto-import?(s).d.ts",
+        "**/components.d.ts",
       ],
     },
   );
