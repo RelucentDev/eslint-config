@@ -1,6 +1,6 @@
 {
   "name": "@relucent.dev/eslint-config",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "type": "module",
   "description": "Relucent's Shared ESLint Config",
   "repository": {
