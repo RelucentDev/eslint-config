@@ -52,6 +52,12 @@ export default function relucentESLint({
         parser: tseslint.parser as Linter.FlatConfigParserModule,
         globals: {
           ...globals.node,
+          ...globals.builtin,
+          ...globals.browser,
+          ...globals.es2021,
+          document: "readonly",
+          navigator: "readonly",
+          window: "readonly",
           ...addGlobals,
         },
       },
