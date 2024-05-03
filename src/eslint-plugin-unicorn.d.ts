@@ -7,9 +7,9 @@
  */
 
 /**
- * ESLint Jest Plugin.
+ * eslint-plugin-unicorn.
  *
  * @since 1.0.0
- * @see {@link https://www.npmjs.com/package/eslint-plugin-jest}
+ * @see {@link https://www.npmjs.com/package/eslint-plugin-unicorn}
  */
-declare module "eslint-plugin-jest";
+declare module "eslint-plugin-unicorn";
