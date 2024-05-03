@@ -1,5 +1,39 @@
 # @relucent.dev/eslint-config
 
+## 3.0.0
+
+### Major Changes
+
+- 446154b: remove eslint-plugin-jsdoc from preset configuration
+- 446154b: Initial release of configurable flat config.
+
+  ```diff
+  import relucentESLint from "@relucent.dev/eslint-config";
+
+  export default [
+  - ...relucentESLint,
+  + ...relucentESLint({
+  +    // Configuration, e.g:
+  +    prettier: false,
+  +  }),
+  ];
+  ```
+
+  ```diff
+  - import tsRelucentESLint from "@relucent.dev/eslint-config/typescript";
+  + import relucentESLint from "@relucent.dev/eslint-config";
+
+  export default [
+  - ...tsRelucentESLint,
+  + // Now enabled by default
+  + relucentESLint(),
+  ];
+  ```
+
+### Patch Changes
+
+- 446154b: update dependencies
+
 ## 2.0.7
 
 ### Patch Changes
