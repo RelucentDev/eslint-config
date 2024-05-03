@@ -1,5 +1,13 @@
 # @relucent.dev/eslint-config
 
+## 3.0.1
+
+### Patch Changes
+
+- 5bbc141: adjust location of types
+- 12044bd: adjust ignored glob patterns, adds additional ignored paths
+- 9c57921: add additional globals
+
 ## 3.0.0
 
 ### Major Changes
