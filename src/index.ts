@@ -33,10 +33,27 @@ export default function relucentESLint({
   jest: enableJest = true,
   globals: addGlobals = {},
 }: ESLintOptions = {}): Linter.FlatConfig[] {
-  const configs: Linter.FlatConfig[] = [eslint.configs.recommended];
+  const tsGlob = "**/*.{ts,tsx,js,cjs,mjs,jsx}";
+  const configs: Linter.FlatConfig[] = [
+    { ...eslint.configs.recommended, files: [tsGlob] },
+  ];
 
   if (enableTS) {
-    configs.push(...(tseslint.configs.recommended as Linter.FlatConfig[]));
+    const tsConfigs = tseslint.configs.recommended as Linter.FlatConfig[];
+    configs.push(
+      ...tsConfigs.map((config) => {
+        return {
+          ...config,
+          files: [tsGlob],
+        };
+      }),
+      {
+        files: [tsGlob],
+        languageOptions: {
+          parser: tseslint.parser as Linter.FlatConfigParserModule,
+        },
+      },
+    );
   }
 
   if (enableJest) {
@@ -46,10 +63,8 @@ export default function relucentESLint({
   configs.push(
     unicorn.configs["flat/all"],
     {
-      files: ["**/*.{ts,tsx,js,cjs,mjs,jsx}"],
       languageOptions: {
         ecmaVersion: "latest",
-        parser: tseslint.parser as Linter.FlatConfigParserModule,
         globals: {
           ...globals.node,
           ...globals.builtin,
