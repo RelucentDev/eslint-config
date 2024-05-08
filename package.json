@@ -45,7 +45,7 @@
     "prettier:dev": "prettier --write .",
     "publint": "publint",
     "release": "changeset publish",
-    "tsup": "tsup --entry src/index.ts --entry src/typescript.ts --format cjs,esm --minify --dts --sourcemap",
+    "tsup": "tsup src/index.ts --format cjs,esm --minify --dts --sourcemap",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
