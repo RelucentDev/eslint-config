@@ -1,5 +1,11 @@
 # @relucent.dev/eslint-config
 
+## 3.0.2
+
+### Patch Changes
+
+- 11e2f19: restrict typescript parser to typescript files
+
 ## 3.0.1
 
 ### Patch Changes
