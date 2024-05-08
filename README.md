@@ -14,6 +14,7 @@ Shared ESLint config for Relucent projects.
 
 ```ts
 // eslint.config.js
+
 import relucentESLint from "@relucent.dev/eslint-congig";
 
 export default [
@@ -26,6 +27,7 @@ or adjust some things:
 
 ```ts
 // eslint.config.js
+
 import relucentESLint from "@relucent.dev/eslint-congig";
 
 export default [

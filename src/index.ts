@@ -5,13 +5,14 @@
  * @author    Relucent Ltd <hello@relucent.dev>
  * @see       https://relucent.dev
  */
-import eslint from "@eslint/js";
+
 import { ESLint, Linter } from "eslint";
 import prettier from "eslint-config-prettier";
 import jest from "eslint-plugin-jest";
 import unicorn from "eslint-plugin-unicorn";
 import globals from "globals";
 import tseslint from "typescript-eslint";
+import eslint from "@eslint/js";
 
 export interface ESLintOptions {
   prettier?: boolean;
