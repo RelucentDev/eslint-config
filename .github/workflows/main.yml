@@ -15,7 +15,7 @@ jobs:
     secrets: inherit
 
   check-links:
-    uses: RelucentDev/governance/.github/workflows/check-links.yml@main
+    uses: RelucentDev/standards/.github/workflows/check-links.yml@main
     secrets: inherit
 
   release:
